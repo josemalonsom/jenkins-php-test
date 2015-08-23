@@ -13,6 +13,9 @@
     </target>
 
     <target name="phpunit" description="Phpunit" depends="composer-install">
-        <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true" />
+        <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true">
+            <arg value="-c"/>
+            <arg file="${basedir}/build/phpunit.xml"/>
+        </exec>
     </target>
 </project>
